@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delicate</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="main">
+      <video id="videoPlayer" muted autoplay></video>
+      <img class="left" src="images/left.svg" alt="CREATIVE HOUSE" />
+      <img class="center" src="images/center.svg" alt="Delicate" />
+      <img class="right" src="images/right.svg" />
+    </div>
+    <input type="file" id="videoUploader" accept="video/*" />
+
+    <script>
+      const videoUploader = document.getElementById("videoUploader");
+      const videoPlayer = document.getElementById("videoPlayer");
+
+      videoUploader.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file) {
+          const videoURL = URL.createObjectURL(file);
+          videoPlayer.src = videoURL;
+          videoPlayer.load();
+        }
+      });
+    </script>
+  </body>
+</html>
