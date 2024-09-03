@@ -338,6 +338,9 @@
   flex-shrink: 0;
 }
 
+.tms-article-side-top {
+  word-break: keep-all;
+}
 .tms-article-side-top h2 {
   margin-top: 0;
   font-size: 16px;
